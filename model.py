@@ -75,6 +75,7 @@ class CNN(nn.Module):
             nn.BatchNorm2d(128),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2),
+            
         )
 
         self.classifier = nn.Sequential(

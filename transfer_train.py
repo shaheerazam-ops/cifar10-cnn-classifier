@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader, random_split
 import torch.optim as optim
 from transfer_model import TransferResNet
 import os
-
+DATA_ROOT = "/content/drive/MyDrive/cifar10-data"
 # 1. TRANSFORMS
 
 train_transform = transforms.Compose([
@@ -29,14 +29,14 @@ test_transform = transforms.Compose([
 # 2. DATASETS
 
 full_train_dataset = datasets.CIFAR10(
-    root="data",
+    root="DATA_ROOT",
     train=True,
     download=False,
     transform=train_transform
 )
 
 test_dataset = datasets.CIFAR10(
-    root="data",
+    root="DATA_ROOT",
     train=False,
     download=False,
     transform=test_transform
