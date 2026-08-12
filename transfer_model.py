@@ -16,6 +16,9 @@ class TransferResNet(nn.Module):
         # Freeze all pretrained layers
         for param in self.model.parameters():
             param.requires_grad = False
+        # unfreeze layer 4
+        for param in self.model.parameters():
+            param.requires_grad= True    
 
         # Replace ImageNet classifier
         self.model.fc = nn.Linear(

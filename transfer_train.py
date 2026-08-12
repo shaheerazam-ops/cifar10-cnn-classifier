@@ -97,10 +97,9 @@ criterion = nn.CrossEntropyLoss()
 # 9. OPTIMIZER
 
 optimizer = optim.Adam(
-    model.parameters(),
-    lr=0.001
+    filter(lambda p: p.requires_grad, model.parameters()),
+    lr=0.0001
 )
-
 
 # 10. TRAINING SETTINGS
 
