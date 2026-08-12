@@ -29,14 +29,14 @@ test_transform = transforms.Compose([
 # 2. DATASETS
 
 full_train_dataset = datasets.CIFAR10(
-    root="DATA_ROOT",
+    root=DATA_ROOT,
     train=True,
     download=False,
     transform=train_transform
 )
 
 test_dataset = datasets.CIFAR10(
-    root="DATA_ROOT",
+    root=DATA_ROOT,
     train=False,
     download=False,
     transform=test_transform
